@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#182c36">
+<title>دفتر يوسف — حكاية من العراق</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Readex+Pro:wght@400;500;600;700&display=swap');
+:root{color-scheme:dark;--ink:#f8efd9;--muted:#cbbda3;--gold:#eab96f;--teal:#7fc8b3;--panel:rgba(20,37,43,.93)}
+*{box-sizing:border-box}html,body{height:100%;margin:0;overflow:hidden;background:#152a32;color:var(--ink);font-family:'Readex Pro',Tahoma,sans-serif;touch-action:none}body{display:grid;place-items:center}.shell{position:relative;width:min(100vw,1280px);height:min(100dvh,800px);aspect-ratio:16/10;overflow:hidden;background:#d29570;box-shadow:0 24px 80px #061216aa;isolation:isolate}.shell:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 90px #142b3744;z-index:2}canvas{width:100%;height:100%;display:block;image-rendering:auto}.hud{position:absolute;z-index:3;inset:0;pointer-events:none}.topbar{position:absolute;top:clamp(12px,3vw,26px);right:clamp(12px,3vw,30px);left:clamp(12px,3vw,30px);display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.brand{display:flex;gap:10px;align-items:center;text-shadow:0 2px 8px #172b33}.seal{width:40px;height:40px;border:1px solid #f6dbab88;border-radius:50%;display:grid;place-items:center;background:#16323c88;color:#f4cd8a;font-size:20px}.brand small{display:block;color:#eed7ad;font-size:10px;letter-spacing:.08em}.brand b{font-size:15px}.objective{max-width:250px;padding:10px 14px;border:1px solid #f6dbab55;border-radius:15px;background:#18333bc9;backdrop-filter:blur(8px);font-size:12px;color:#f4e7ca;text-align:right}.objective strong{display:block;color:#f0c77d;font-size:10px;margin-bottom:3px}.progress{display:flex;gap:5px;margin-top:7px}.dot{width:7px;height:7px;border-radius:50%;background:#ffffff33}.dot.done{background:#e8bc73;box-shadow:0 0 8px #e8bc73}.hint{position:absolute;bottom:clamp(100px,17vh,145px);left:50%;transform:translateX(-50%);white-space:nowrap;padding:9px 14px;background:#172e36d9;border:1px solid #ffe4ae44;border-radius:99px;color:#ffedc8;font-size:12px;transition:opacity .2s}.dialogue{pointer-events:auto;position:absolute;bottom:18px;left:50%;transform:translateX(-50%);width:min(720px,calc(100% - 32px));padding:18px 22px 15px;border:1px solid #f4d18c66;border-radius:21px;background:var(--panel);box-shadow:0 14px 40px #06171dbb;backdrop-filter:blur(12px);display:none}.dialogue.show{display:block;animation:rise .28s ease-out}.speaker{font-size:11px;color:var(--gold);font-weight:700;margin-bottom:7px}.line{font-family:'Amiri',serif;font-size:clamp(17px,2.4vw,23px);line-height:1.55;color:#fff4df;min-height:55px}.dialogue-footer{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px;color:#c7bba4;font-size:10px}.goldbtn,.primary{pointer-events:auto;border:0;border-radius:12px;background:#e8b86c;color:#25383b;padding:10px 17px;font:700 12px 'Readex Pro',sans-serif;cursor:pointer;box-shadow:0 4px 0 #af7841;transition:transform .12s,filter .12s}.goldbtn:active,.primary:active{transform:translateY(2px);box-shadow:0 2px 0 #af7841}.overlay{position:absolute;inset:0;z-index:4;display:grid;place-items:center;padding:20px;background:linear-gradient(180deg,#172e3840,#12272dad 76%);transition:opacity .35s}.overlay.hidden{opacity:0;pointer-events:none}.card{width:min(550px,100%);text-align:center;padding:clamp(22px,5vw,43px);border:1px solid #f4d49b66;border-radius:27px;background:linear-gradient(145deg,#193a41ee,#1a3039f5);box-shadow:0 25px 90px #091a20aa}.eyebrow{color:#e6bb76;font-size:11px;letter-spacing:.16em}.card h1{font-family:'Amiri',serif;font-size:clamp(38px,8vw,66px);line-height:1.02;margin:12px 0 12px;color:#fff2d6}.card p{margin:0 auto 21px;max-width:390px;color:#d4c8b1;line-height:1.9;font-size:14px}.card .primary{font-size:14px;padding:13px 26px}.micro{font-size:10px;color:#b9ae98;margin-top:17px}.end-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:17px}.quiet{pointer-events:auto;background:transparent;color:#f3d599;border:1px solid #f3d59966;border-radius:12px;padding:10px 16px;font:600 12px 'Readex Pro';cursor:pointer}.touch-controls{position:absolute;z-index:3;bottom:20px;left:20px;right:20px;display:none;align-items:flex-end;justify-content:space-between;pointer-events:none}.pad{display:flex;gap:9px;direction:ltr}.control{pointer-events:auto;width:58px;height:58px;border:1px solid #f4dfa866;border-radius:19px;background:#19343cbf;color:#fff0d3;font-size:24px;display:grid;place-items:center;user-select:none;-webkit-user-select:none;touch-action:none;box-shadow:0 5px 15px #101f2580}.control:active,.control.pressed{background:#d6a35c;color:#203238}.control.action{width:68px;height:68px;border-radius:50%;font-size:13px;font-weight:700;background:#e4b66bcf;color:#24383b}.control.jump{font-size:21px}.toast{position:absolute;z-index:3;top:84px;left:50%;transform:translateX(-50%);padding:8px 13px;border-radius:30px;background:#19373be0;color:#ffe4ae;font-size:11px;opacity:0;transition:opacity .3s;white-space:nowrap}.toast.visible{opacity:1}.chapter{position:absolute;z-index:2;bottom:22px;right:28px;color:#ffe7b9;font-size:10px;text-shadow:0 2px 5px #14262d;opacity:.8}
+@keyframes rise{from{transform:translate(-50%,18px);opacity:0}to{transform:translate(-50%,0);opacity:1}}
+@media (pointer:coarse),(max-width:760px){.shell{width:100vw;height:100dvh;aspect-ratio:auto}.touch-controls{display:flex}.objective{max-width:180px;padding:8px 11px;font-size:10px}.brand b{font-size:12px}.brand small{font-size:8px}.seal{width:34px;height:34px}.dialogue{bottom:94px;padding:14px 16px 12px}.dialogue-footer{font-size:9px}.hint{bottom:157px}.chapter{display:none}}
+@media (max-height:520px){.touch-controls{bottom:10px}.control{width:49px;height:49px;border-radius:16px}.control.action{width:57px;height:57px}.dialogue{bottom:72px;padding:10px 14px}.line{font-size:17px;min-height:38px}.hint{bottom:130px}.topbar{top:9px}}
+</style>
+</head>
+<body>
+<main class="shell" aria-label="لعبة دفتر يوسف">
+<canvas id="game" aria-label="مشهد اللعبة"></canvas>
+<div class="hud">
+  <div class="topbar"><div class="brand"><div class="seal">ن</div><div><small>حكاية قصيرة من العراق</small><b>دفتر يوسف</b></div></div><div class="objective"><strong>مهمتك</strong><span id="objective">امشِ في الحارة واجمع حكاياتك</span><div class="progress"><i class="dot"></i><i class="dot"></i><i class="dot"></i></div></div></div>
+  <div class="hint" id="hint">← امشِ واستكشف الحارة</div>
+  <div class="toast" id="toast">حكاية جديدة في الدفتر ✦</div>
+  <div class="chapter">بغداد · مساء صيفي</div>
+  <section class="dialogue" id="dialogue" aria-live="polite"><div class="speaker" id="speaker">يوسف</div><div class="line" id="line"></div><div class="dialogue-footer"><span id="dialogue-tip">اضغط متابعة أو المس الشاشة</span><button class="goldbtn" id="next">تابع ←</button></div></section>
+  <div class="touch-controls" aria-label="أزرار التحكم"><div class="pad"><button class="control" data-key="left" aria-label="يسار">◀</button><button class="control" data-key="right" aria-label="يمين">▶</button></div><div class="pad"><button class="control jump" data-key="jump" aria-label="قفز">↑</button><button class="control action" data-key="action">حكاية</button></div></div>
+</div>
+<div class="overlay" id="overlay"><div class="card"><div class="eyebrow">حكاية تفاعلية · ٥ دقائق</div><h1>دفتر يوسف</h1><p>في حارةٍ بغدادية، يحمل يوسف دفتره ويمشي إلى المدرسة. لم يكن الطريق عادلاً معه دائماً… لكن صوته وحكاياته أقوى من الظلم.</p><button class="primary" id="start">ابدأ الحكاية</button><div class="micro">تحكّم بالأسهم أو A / D · تفاعل بـ E أو المس · قفز بـ Space<br>صُمّمت للمس على الهاتف والتابلت</div></div></div>
+<div class="overlay hidden" id="ending"><div class="card"><div class="eyebrow">انتهت الحكاية، وبدأ الأمل</div><h1>صوتك مهم</h1><p>فتح يوسف دفتره أمام الصف. هذه المرة، أصغى الجميع. الظلم لا يختفي بالصمت؛ تبدأ العدالة حين نسمع بعضنا ونقف معاً.</p><p style="color:#edc47f">«مو ذنبي من وين جيت… كل طفل يستاهل فرصة.»</p><div class="end-actions"><button class="primary" id="restart">العب من جديد</button><button class="quiet" id="share">شارك الحكاية</button></div></div></div>
+</main>
+<script>
+(()=>{
+const canvas=document.getElementById('game');let ctx=canvas.getContext('2d');
+const W=1600,H=600,ground=480,sceneCache=document.createElement('canvas');sceneCache.width=W;sceneCache.height=H;
+let staticRender=false;
+let dpr=1,scale=1,viewWidth=960,camera=0,playing=false,paused=false,ending=false,last=0,toastTimer=0;
+const player={x:100,y:ground-68,w:34,h:68,vx:0,vy:0,face:1,onGround:true};
+const keys={left:false,right:false};
+const spots=[
+ {x:330,type:'notebook',title:'دفتر المدرسة',text:'«كانوا يقولون: مكانك مو هنا. بس آني هم أريد أتعلم… وكتبت كلشي صار بدفتري.»'},
+ {x:730,type:'bread',title:'أم حيدر',text:'«يمّه، يوسف مو غريب علينا. هو ابن حارتنا، ومن حقه يلعب ويتعلم مثل كل الأطفال.»'},
+ {x:1170,type:'photo',title:'صورة قديمة',text:'«أبويه علّمني: لا تخلي كلمة ظالمة تعرّفك. أنت أكبر من اللي صار وياك.»'}
+];
+let found=new Set(),near=null,dialogueQueue=[],currentAction=null;
+const el=id=>document.getElementById(id),dots=[...document.querySelectorAll('.dot')];
+function resize(){const r=canvas.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);scale=canvas.height/H;viewWidth=canvas.width/scale;ctx.setTransform(scale,0,0,scale,0,0)}
+new ResizeObserver(resize).observe(canvas);resize();
+function roundRect(x,y,w,h,r,fill,stroke){ctx.beginPath();ctx.roundRect(x,y,w,h,r);if(fill){ctx.fillStyle=fill;ctx.fill()}if(stroke){ctx.strokeStyle=stroke;ctx.stroke()}}
+function sky(){let g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#e5a078');g.addColorStop(.52,'#f1bd86');g.addColorStop(1,'#e4ad79');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+ let sun=ctx.createRadialGradient(1130,120,5,1130,120,95);sun.addColorStop(0,'#ffe9b5');sun.addColorStop(.55,'#ffdfa588');sun.addColorStop(1,'#ffdfa500');ctx.fillStyle=sun;ctx.fillRect(1020,10,220,220);
+ ctx.fillStyle='#ffdda0';ctx.beginPath();ctx.arc(1130,120,33,0,7);ctx.fill();
+ // distant rooftops
+ ctx.fillStyle='#bd846a';for(let x=-30;x<W+120;x+=170){const hh=90+(Math.sin(x*0.02)*20);ctx.fillRect(x,350-hh,140,hh);ctx.fillStyle='#d19972';ctx.fillRect(x+12,350-hh-16,54,16);ctx.fillStyle='#bd846a';}
+ ctx.fillStyle='#b77961';ctx.fillRect(0,350,W,130);
+ // minaret silhouette
+ ctx.fillStyle='#a96e58';ctx.fillRect(1300,160,20,190);ctx.beginPath();ctx.moveTo(1291,160);ctx.lineTo(1310,116);ctx.lineTo(1329,160);ctx.fill();ctx.fillRect(1293,222,34,6);ctx.beginPath();ctx.arc(1310,116,7,0,Math.PI*2);ctx.fill();
+ // light windows
+ for(let x=15;x<W;x+=100)for(let y=295;y<350;y+=35){ctx.fillStyle='#f1c084';ctx.fillRect(x,y,15,20)}
+ // distant palm silhouettes
+ for(const x of [180,605,1040,1460])palm(x,340,.63,'#7c6654');
+ // river strip / far bank
+ ctx.fillStyle='#557d78';ctx.fillRect(0,390,W,32);ctx.fillStyle='#7fa49a';for(let x=0;x<W;x+=76){ctx.fillRect(x,397,34,2);ctx.fillRect(x+39,411,19,2)}
+}
+function palm(x,y,s,color='#465e4f'){ctx.save();ctx.translate(x,y);ctx.scale(s,s);ctx.strokeStyle=color;ctx.lineWidth=9;ctx.beginPath();ctx.moveTo(0,0);ctx.quadraticCurveTo(-8,-70,3,-125);ctx.stroke();ctx.fillStyle=color;for(let i=0;i<8;i++){const a=(-Math.PI*.98)+(i*Math.PI*1.72/7);ctx.beginPath();ctx.ellipse(3,-124,52,10,a,0,Math.PI*2);ctx.fill()}ctx.restore()}
+function building(x,w,color,kind=0){ctx.fillStyle=color;ctx.fillRect(x,218,w,262);ctx.fillStyle='#e3b27e';ctx.fillRect(x+4,218,w-8,8);
+ for(let yy=251;yy<403;yy+=60){for(let xx=x+17;xx<x+w-20;xx+=56){ctx.fillStyle=kind===1?'#594a42':'#805b4d';ctx.fillRect(xx,yy,27,42);ctx.fillStyle='#e8b879';ctx.fillRect(xx+4,yy+4,19,29);ctx.fillStyle='#765449';ctx.fillRect(xx+12,yy+30,2,12)}}
+ ctx.fillStyle='#8c5c49';ctx.fillRect(x+w*.39,407,w*.25,73);ctx.beginPath();ctx.arc(x+w*.515,407,w*.125,Math.PI,0);ctx.fill();ctx.fillStyle='#dda36d';ctx.fillRect(x+w*.42,431,w*.19,49);
+ // shade awning
+ ctx.fillStyle='#536d66';ctx.fillRect(x+8,371,w-16,13);for(let xx=x+9;xx<x+w-16;xx+=24){ctx.beginPath();ctx.moveTo(xx,384);ctx.lineTo(xx+12,400);ctx.lineTo(xx+24,384);ctx.fill()}
+}
+function world(){sky();
+ // homes, changing facades
+ building(10,230,'#d7a077');building(250,220,'#c38b6d',1);building(500,270,'#d6a579');building(800,230,'#ba8267',1);building(1050,250,'#d5a176');
+ // school at end
+ ctx.fillStyle='#bb8a65';ctx.fillRect(1340,188,270,292);ctx.fillStyle='#f1c685';ctx.fillRect(1352,202,247,11);ctx.fillStyle='#6b5549';ctx.fillRect(1418,253,116,227);ctx.beginPath();ctx.arc(1476,253,58,Math.PI,0);ctx.fill();ctx.fillStyle='#e6bb7c';ctx.fillRect(1435,278,82,202);ctx.fillStyle='#795b48';ctx.fillRect(1444,294,64,96);ctx.fillStyle='#e8bf7b';ctx.fillRect(1453,304,46,74);ctx.fillStyle='#785a46';ctx.font='bold 18px Readex Pro, sans-serif';ctx.textAlign='center';ctx.fillText('مدرسة الحارة',1477,230);
+ // awning/front ground
+ ctx.fillStyle='#c48c67';ctx.fillRect(0,422,W,58);ctx.fillStyle='#e5b27a';ctx.fillRect(0,421,W,5);
+ ctx.fillStyle='#9b7156';ctx.fillRect(0,476,W,124);ctx.fillStyle='#c09068';for(let x=0;x<W;x+=90){ctx.fillRect(x,520,55,2);ctx.fillRect(x+43,480,2,40);ctx.fillRect(x+12,559,45,2)}
+ // patches of warm street light
+ const glow=ctx.createRadialGradient(540,480,5,540,480,250);glow.addColorStop(0,'#e9bc7b32');glow.addColorStop(1,'#e9bc7b00');ctx.fillStyle=glow;ctx.fillRect(300,400,480,200);
+ // street clutter: clay pots, basket, plants
+ for(const [x,y,s] of [[205,468,.9],[620,468,1],[990,467,.78],[1270,468,1]]){ctx.fillStyle='#965d46';ctx.beginPath();ctx.ellipse(x,y,13*s,17*s,0,0,Math.PI*2);ctx.fill();ctx.fillStyle='#bd8060';ctx.fillRect(x-11*s,y-15*s,22*s,4*s);ctx.strokeStyle='#687c57';ctx.lineWidth=3;ctx.beginPath();ctx.moveTo(x,y-14);ctx.lineTo(x-7,y-28);ctx.moveTo(x,y-14);ctx.lineTo(x+7,y-28);ctx.stroke()}
+ // story objects
+ spots.forEach((s,i)=>drawSpot(s,i));
+ // old street lamp
+ ctx.strokeStyle='#584e42';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(905,420);ctx.lineTo(905,240);ctx.lineTo(925,226);ctx.stroke();ctx.fillStyle='#ffe0a0';ctx.beginPath();ctx.arc(930,230,9,0,Math.PI*2);ctx.fill();
+}
+function drawSpot(s,i){const x=s.x;ctx.save();if(s.type==='notebook'){
+ // school satchel
+ roundRect(x-26,426,55,43,9,'#53786d','#304e4a');ctx.fillStyle='#d49f62';ctx.fillRect(x-7,432,18,4);ctx.strokeStyle='#344d47';ctx.lineWidth=4;ctx.beginPath();ctx.arc(x,427,14,Math.PI,0);ctx.stroke();
+ ctx.save();ctx.translate(x+31,452);ctx.rotate(-.16);roundRect(-12,-19,25,33,3,'#f4dbab','#9c744b');ctx.strokeStyle='#bf9863';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(-5,-10);ctx.lineTo(6,-10);ctx.moveTo(-5,-4);ctx.lineTo(6,-4);ctx.stroke();ctx.restore();
+ }else if(s.type==='bread'){
+ // neighbor on a low doorstep, bread basket
+ ctx.fillStyle='#65564a';ctx.fillRect(x-42,449,80,20);ctx.fillStyle='#9c704c';ctx.fillRect(x-38,427,74,24);ctx.fillStyle='#e1b478';ctx.beginPath();ctx.ellipse(x-2,428,24,10,0,Math.PI,Math.PI*2);ctx.fill();ctx.fillStyle='#d28e4f';ctx.beginPath();ctx.ellipse(x-4,426,18,7,0,0,Math.PI*2);ctx.fill();person(x+49,ground-58,'#6e7460',true);
+ }else{
+ // framed family photo on a bench
+ ctx.fillStyle='#674e3d';ctx.fillRect(x-48,449,105,14);ctx.fillRect(x-40,463,6,18);ctx.fillRect(x+41,463,6,18);roundRect(x-22,394,48,53,4,'#e4bd7d','#795e42');ctx.fillStyle='#a5a17b';ctx.fillRect(x-16,400,36,39);personMini(x-2,431,'#56665b');
+ }
+ // discoverable aura
+ if(!staticRender&&!found.has(i)){ctx.globalAlpha=.55+.14*Math.sin(performance.now()/220);ctx.strokeStyle='#ffe2a1';ctx.lineWidth=2;ctx.setLineDash([4,5]);ctx.beginPath();ctx.ellipse(x,435,48,48,0,0,7);ctx.stroke();ctx.setLineDash([]);ctx.fillStyle='#fff0cc';ctx.font='16px sans-serif';ctx.textAlign='center';ctx.fillText('✦',x,375)}ctx.restore()}
+function personMini(x,y,color){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y-23,8,0,7);ctx.fill();ctx.fillRect(x-8,y-16,16,19);ctx.fillStyle='#d8ae7e';ctx.fillRect(x-2,y-14,4,4)}
+function person(x,y,color,elder=false){ctx.fillStyle=color;ctx.beginPath();ctx.arc(x,y-39,12,0,7);ctx.fill();ctx.fillRect(x-13,y-28,26,29);ctx.strokeStyle='#4b4c42';ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x-8,y);ctx.lineTo(x-12,y+10);ctx.moveTo(x+8,y);ctx.lineTo(x+12,y+10);ctx.stroke();if(elder){ctx.fillStyle='#ddc49b';ctx.fillRect(x-12,y-51,24,5)}}
+function drawPlayer(){const x=player.x,y=player.y;ctx.save();ctx.translate(x,y);if(player.face<0)ctx.scale(-1,1);
+ // shadow
+ ctx.fillStyle='#413c35';ctx.globalAlpha=.24;ctx.beginPath();ctx.ellipse(0,67,24,6,0,0,7);ctx.fill();ctx.globalAlpha=1;
+ // legs animate
+ const walk=Math.abs(player.vx)>1?Math.sin(performance.now()/90)*6:0;ctx.strokeStyle='#344c4d';ctx.lineWidth=7;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(-7,48);ctx.lineTo(-8-walk,64);ctx.moveTo(7,48);ctx.lineTo(8+walk,64);ctx.stroke();ctx.strokeStyle='#57483b';ctx.lineWidth=6;ctx.beginPath();ctx.moveTo(-8-walk,64);ctx.lineTo(-1-walk,65);ctx.moveTo(8+walk,64);ctx.lineTo(15+walk,65);ctx.stroke();
+ // body and scarf
+ ctx.fillStyle='#527b70';ctx.beginPath();ctx.moveTo(-14,20);ctx.quadraticCurveTo(0,13,14,20);ctx.lineTo(13,50);ctx.lineTo(-13,50);ctx.closePath();ctx.fill();ctx.fillStyle='#e2b66f';ctx.beginPath();ctx.moveTo(-7,18);ctx.lineTo(0,23);ctx.lineTo(7,18);ctx.lineTo(5,34);ctx.lineTo(0,38);ctx.lineTo(-5,34);ctx.fill();
+ // backpack
+ roundRect(-19,25,10,22,4,'#9b694c');ctx.fillStyle='#c69365';ctx.fillRect(-18,31,8,3);
+ // head, hair and face
+ ctx.fillStyle='#9b6247';ctx.beginPath();ctx.arc(0,9,13,0,7);ctx.fill();ctx.fillStyle='#302f2b';ctx.beginPath();ctx.arc(0,3,14,Math.PI,Math.PI*2);ctx.lineTo(12,9);ctx.quadraticCurveTo(4,4,-1,9);ctx.lineTo(-13,10);ctx.closePath();ctx.fill();ctx.fillStyle='#302a26';ctx.beginPath();ctx.arc(6,10,1.4,0,7);ctx.fill();ctx.strokeStyle='#70442f';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(4,16);ctx.quadraticCurveTo(8,18,10,15);ctx.stroke();
+ // hand
+ ctx.fillStyle='#a76c4c';ctx.beginPath();ctx.arc(16,31,4,0,7);ctx.fill();ctx.restore()}
+function buildSceneCache(){const screenCtx=ctx;ctx=sceneCache.getContext('2d');staticRender=true;world();staticRender=false;ctx=screenCtx}
+function drawMarkers(){for(let i=0;i<spots.length;i++){if(found.has(i))continue;const x=spots[i].x;ctx.globalAlpha=.55+.14*Math.sin(performance.now()/220);ctx.strokeStyle='#ffe2a1';ctx.lineWidth=2;ctx.setLineDash([4,5]);ctx.beginPath();ctx.ellipse(x,435,48,48,0,0,7);ctx.stroke();ctx.setLineDash([]);ctx.globalAlpha=1;ctx.fillStyle='#fff0cc';ctx.font='16px sans-serif';ctx.textAlign='center';ctx.fillText('✦',x,375)}}
+buildSceneCache();
+function render(){ctx.clearRect(0,0,viewWidth,H);ctx.save();ctx.translate(-camera,0);ctx.drawImage(sceneCache,0,0);drawMarkers();drawPlayer();ctx.restore();requestAnimationFrame(render)}render();
+function updateObjective(){dots.forEach((d,i)=>d.classList.toggle('done',found.has(i)));el('objective').textContent=found.size<3?`اكتشف الحكايات (${found.size}/3)`:'اذهب إلى باب المدرسة';}
+function setDialogue(speaker,text,action){paused=true;currentAction=action;el('speaker').textContent=speaker;el('line').textContent=text;el('dialogue').classList.add('show');el('hint').style.opacity=0;}
+function closeDialogue(){el('dialogue').classList.remove('show');paused=false;currentAction=null;el('hint').style.opacity=1;}
+function action(){if(!playing)return;if(paused){const a=currentAction;closeDialogue();if(a)a();return}if(near!==null&&!found.has(near)){found.add(near);updateObjective();const s=spots[near];el('toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el('toast').classList.remove('visible'),1600);setDialogue(s.title,s.text,()=>{if(found.size===3)el('objective').textContent='وصل يوسف إلى المدرسة'})}else if(player.x>1450){if(found.size===3)finish();else setDialogue('يوسف','قبل ما أوصل، لازم ألمّ حكاياتي… كل وحدة تذكّرني إني مو وحدي.',null)}else if(near===null){setDialogue('يوسف','أمشي بطريقي… يمكن أحد يسمع حكايتي.',null)}}
+function finish(){if(ending)return;ending=true;playing=false;el('ending').classList.remove('hidden')}
+function step(t){const dt=Math.min(.035,(t-last)/1000||0);last=t;if(playing&&!paused){let dir=(keys.right?1:0)-(keys.left?1:0);player.vx=dir*205;if(dir)player.face=dir;player.x=Math.max(24,Math.min(W-45,player.x+player.vx*dt));player.vy+=850*dt;player.y+=player.vy*dt;if(player.y>=ground-player.h){player.y=ground-player.h;player.vy=0;player.onGround=true}camera=Math.max(0,Math.min(W-viewWidth,player.x-viewWidth*.48));
+ near=null;let nearest=Infinity;spots.forEach((s,i)=>{const d=Math.abs(s.x-player.x);if(d<70&&d<nearest){near=i;nearest=d}});el('hint').textContent=near!==null&&!found.has(near)?'اضغط «حكاية» أو E لتكتشف':'← امشِ واستكشف الحارة';if(player.x>1450&&found.size===3)el('hint').textContent='اضغط «حكاية» عند باب المدرسة'}requestAnimationFrame(step)}requestAnimationFrame(step);
+function start(){el('overlay').classList.add('hidden');playing=true;player.x=100;last=performance.now()}
+el('start').addEventListener('click',start);el('next').addEventListener('click',()=>action());el('restart').addEventListener('click',()=>location.reload());el('share').addEventListener('click',async()=>{const text='لعبت دفتر يوسف — حكاية تفاعلية من العراق';try{if(navigator.share)await navigator.share({title:'دفتر يوسف',text});else{await navigator.clipboard.writeText(text);el('share').textContent='تم النسخ ✓'}}catch{}});
+window.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','ArrowUp',' ','a','d','A','D','e','E','Enter'].includes(e.key))e.preventDefault();if(e.key==='ArrowRight'||e.key==='d'||e.key==='D')keys.right=true;if(e.key==='ArrowLeft'||e.key==='a'||e.key==='A')keys.left=true;if((e.key===' '||e.key==='ArrowUp')&&player.onGround&&!paused){player.vy=-370;player.onGround=false}if(e.key==='e'||e.key==='E'||e.key==='Enter'||e.key===' ')action()});window.addEventListener('keyup',e=>{if(e.key==='ArrowRight'||e.key==='d'||e.key==='D')keys.right=false;if(e.key==='ArrowLeft'||e.key==='a'||e.key==='A')keys.left=false});
+document.querySelectorAll('.control').forEach(b=>{const key=b.dataset.key;const down=e=>{e.preventDefault();b.classList.add('pressed');if(key==='left'||key==='right')keys[key]=true;if(key==='jump'&&player.onGround&&!paused){player.vy=-370;player.onGround=false}if(key==='action')action()};const up=e=>{e.preventDefault();b.classList.remove('pressed');if(key==='left'||key==='right')keys[key]=false};b.addEventListener('pointerdown',down);['pointerup','pointercancel','pointerleave'].forEach(ev=>b.addEventListener(ev,up))});
+canvas.addEventListener('pointerdown',()=>{if(paused)action()});
+})();
+</script>
+</body>
+</html>
